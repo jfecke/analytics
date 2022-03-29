@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Topic(models.Model):
@@ -21,3 +22,21 @@ class AccessRecord(models.Model):
 
     def __str__(self):
         return str(self.date)
+
+class User(models.Model):
+    firstName = models.CharField(max_length=20)
+    lastName = models.CharField(max_length=20)
+    email = models.EmailField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.email
+
+# class UserProfileInfo(models.Model):
+#
+#     user = models.OneToOneField(User)
+#
+#     portfolio = models.URLField(blank=True)
+#     pictire = models.ImageField(upload_to='profile_pics')
+#
+#     def __str__(self):
+#         return self.user.username

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="{% url 'index' %}">BRAND</a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a> </li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'regression:user' %}">User</a> </li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'regression:other' %}">Other</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block body_block %}
+
+        {% endblock %}
+    </div>
+
+</body>
+</html>
